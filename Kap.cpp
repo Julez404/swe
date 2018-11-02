@@ -15,10 +15,14 @@ CKap::~CKap()
 {
 }
 
-
-double CKap::getC()
+double CKap::getC() const
 {
 	return c;
+}
+
+CComplex CKap::getImpedanz(double _f) const
+{
+	return CComplex(0, -(1 / (2 * M_PI*_f*c)));
 }
 
 
@@ -33,7 +37,4 @@ std::ostream& operator<<(std::ostream& stream, CKap toPrint)
 	return stream;
 }
 
-CComplex CKap::getImpedanz(double _f)
-{
-	return CComplex(0,-( 1 / (2 * M_PI*_f*c)));
-}
+

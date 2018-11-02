@@ -14,9 +14,10 @@ public:
 	CKap(std::string _name, double _preis, CPunkt _position, double _c);
 	~CKap();
 
-	double getC();
+	double getC() const;
+	CComplex CKap::getImpedanz(double _f)const;
+
 	void setC(double _c);
-	CComplex CKap::getImpedanz(double _f);
-};
+	};
 
 std::ostream& operator<<(std::ostream& stream, CKap toPrint);

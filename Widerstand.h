@@ -14,10 +14,10 @@ public:
 	CWiderstand(std::string _name, double _preis, CPunkt _position, double _r);
 	~CWiderstand();
 
-	double getR();
+	double getR() const;
 	void setR(double _r);
 
-	CComplex CWiderstand::getImpedanz(double _f);
+	CComplex CWiderstand::getImpedanz(double _f) const;
 
 };
 

@@ -12,10 +12,12 @@ public:
 	CSpule(std::string _name, double _preis, CPunkt _position, double _l);
 	~CSpule();
 
-	double getL();
+	double getL() const;
+	CComplex CSpule::getImpedanz(double _f) const;
+
 	void setL(double _l);
 
-	CComplex CSpule::getImpedanz(double _f);
+
 };
 
 std::ostream& operator<<(std::ostream& stream, CSpule toPrint);

@@ -14,11 +14,14 @@ CSpule::~CSpule()
 {}
 
 
-double CSpule::getL()
+double CSpule::getL() const
 {
 	return l;
 }
-
+CComplex CSpule::getImpedanz(double _f) const
+{
+	return CComplex(0, 2 * M_PI*_f*l);
+}
 
 void CSpule::setL(double _l)
 {
@@ -32,7 +35,3 @@ std::ostream& operator<<(std::ostream& stream, CSpule toPrint)
 	return stream;
 }
 
-CComplex CSpule::getImpedanz(double _f)
-{
-	return CComplex(0, 2 * M_PI*_f*l);
-}

@@ -15,7 +15,7 @@ CWiderstand::~CWiderstand()
 {}
 
 
-double CWiderstand::getR()
+double CWiderstand::getR() const
 {
 	return r;
 }
@@ -35,7 +35,7 @@ std::ostream& operator<<(std::ostream& stream, CWiderstand toPrint)
 
 
 
-CComplex CWiderstand::getImpedanz(double _f)
+CComplex CWiderstand::getImpedanz(double _f) const
 {
 	return CComplex(r,0);
 }
