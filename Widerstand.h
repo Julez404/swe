@@ -17,7 +17,7 @@ public:
 	double getR() const;
 	void setR(double _r);
 
-	CComplex CWiderstand::getImpedanz(double _f) const;
+	CComplex getImpedanz(double _f) const;
 
 };
 

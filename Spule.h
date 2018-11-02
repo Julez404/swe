@@ -13,7 +13,7 @@ public:
 	~CSpule();
 
 	double getL() const;
-	CComplex CSpule::getImpedanz(double _f) const;
+	CComplex getImpedanz(double _f) const;
 
 	void setL(double _l);
 

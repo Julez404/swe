@@ -15,7 +15,7 @@ public:
 	~CKap();
 
 	double getC() const;
-	CComplex CKap::getImpedanz(double _f)const;
+	CComplex getImpedanz(double _f)const;
 
 	void setC(double _c);
 	};

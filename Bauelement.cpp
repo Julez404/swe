@@ -9,7 +9,6 @@ CBauelement::CBauelement(std::string _name, double _preis, CPunkt _position)
 	: name(_name), preis(_preis), position(_position)
 {}
 
-
 CBauelement::~CBauelement()
 {}
 
