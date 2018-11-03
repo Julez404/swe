@@ -3,7 +3,9 @@
 
 CBauelement::CBauelement()
 	:preis(0), position(CPunkt())
-{}
+{
+	next = NULL;
+}
 
 CBauelement::CBauelement(std::string _name, double _preis, CPunkt _position)
 	: name(_name), preis(_preis), position(_position)
@@ -40,6 +42,11 @@ void CBauelement::setPreis(double _preis)
 void CBauelement::setPosition(CPunkt _position)
 {
 	position = _position;
+}
+
+void CBauelement::setNext(CBauelement* _next)
+{
+	next = _next;
 }
 
 std::ostream& operator<<(std::ostream& stream, CBauelement _bauelement)

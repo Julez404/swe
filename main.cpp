@@ -7,13 +7,9 @@
 #include "Kap.h"
 #include "Spule.h"
 
-
-
 int main()
 {
 	std::ofstream plot;
-
-
 
 	CWiderstand r1("R1", 0.35, CPunkt(3, 15), 1.5);
 	CSpule l1("L1", 0.81, CPunkt(7, 1), 0.05);
@@ -28,10 +24,6 @@ int main()
 	std::cout << "|Z|= " << Z.getBetrag() << ", Winkel= " << Z.getWinkel() << std::endl;
 
 
-
-
-
-
 	plot.open("frequenzgang");
 	if (plot.is_open())
 	{
@@ -43,8 +35,6 @@ int main()
 				<< std::endl;
 		}
 		plot.close();
-
-
 	}
 
 	system("pause");

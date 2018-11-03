@@ -8,7 +8,7 @@ protected:
 	std::string name;
 	double preis;
 	CPunkt position;
-
+	CBauelement* next;
 
 public:
 	CBauelement();
@@ -24,6 +24,7 @@ public:
 	void setName(std::string _name);
 	void setPreis(double _preis);
 	void setPosition(CPunkt _position);
+	void setNext(CBauelement* _next);
 };
 
 std::ostream& operator<<(std::ostream& stream, CBauelement _bauelement);
