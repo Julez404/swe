@@ -1,11 +1,6 @@
-.vs/**
-.vs
-vs
 .vs/
-vs/
-.vs/*
-vs/*
 Debug
 ipch
 x64
+*user
 *opendb

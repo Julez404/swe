@@ -25,8 +25,7 @@ int main()
 	//Print Values
 	std::cout << "Z: " << Z << std::endl;
 	std::cout << "|Z|= " << Z.getBetrag() << ", Winkel= " << Z.getWinkel() << std::endl;
-
-
+	
 	//Print to File
 	plot.open("frequenzgang");
 	if (plot.is_open())
