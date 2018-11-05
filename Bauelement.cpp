@@ -7,8 +7,8 @@ CBauelement::CBauelement()
 	next = NULL;
 }
 
-CBauelement::CBauelement(std::string _name, double _preis, CPunkt _position)
-	: name(_name), preis(_preis), position(_position)
+CBauelement::CBauelement(std::string _name, double _preis, CPunkt _position, CBauelement* _next)
+	: name(_name), preis(_preis), position(_position),next(_next)
 {}
 
 CBauelement::~CBauelement()
@@ -28,6 +28,11 @@ double CBauelement::getPreis() const
 CPunkt CBauelement::getPosition() const
 {
 	return position;
+}
+
+CBauelement* CBauelement::getNext(void) const
+{
+	return next;
 }
 
 void CBauelement::setName(std::string _name)

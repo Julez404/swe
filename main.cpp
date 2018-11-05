@@ -9,6 +9,7 @@
 
 int main()
 {
+	//Variable Definitions
 	std::ofstream plot;
 
 	CWiderstand r1("R1", 0.35, CPunkt(3, 15), 1.5);
@@ -18,12 +19,14 @@ int main()
 	double frequency = 0;
 	CComplex Z;
 
+	//Calc Values
 	Z = r1.getImpedanz(frequency) + l1.getImpedanz(frequency) + c1.getImpedanz(frequency);
 
+	//Print Values
 	std::cout << "Z: " << Z << std::endl;
 	std::cout << "|Z|= " << Z.getBetrag() << ", Winkel= " << Z.getWinkel() << std::endl;
-
-
+	
+	//Print to File
 	plot.open("frequenzgang");
 	if (plot.is_open())
 	{
@@ -37,6 +40,7 @@ int main()
 		plot.close();
 	}
 
+	//----------------
 	system("pause");
 	return 0;
 }
