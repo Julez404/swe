@@ -6,6 +6,8 @@
 #include "Widerstand.h"
 #include "Kap.h"
 #include "Spule.h"
+#include "Liste.h"
+#include "Liste.cpp"
 
 int main()
 {
@@ -25,7 +27,7 @@ int main()
 	//Print Values
 	std::cout << "Z: " << Z << std::endl;
 	std::cout << "|Z|= " << Z.getBetrag() << ", Winkel= " << Z.getWinkel() << std::endl;
-	
+
 	//Print to File
 	plot.open("frequenzgang");
 	if (plot.is_open())
@@ -39,6 +41,14 @@ int main()
 		}
 		plot.close();
 	}
+
+	CListe<CBauelement> BauelementListe(&r1);
+	BauelementListe.addEnd(new CBauelement("Element 1", 1.5, CPunkt(1, 2)));
+	BauelementListe.addEnd(new CBauelement("Element 2", 5.9, CPunkt(-1, 5)));
+	//BauelementListe.getLastEntry();
+	delete &r1;
+
+
 
 	//----------------
 	system("pause");

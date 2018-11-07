@@ -42,6 +42,9 @@
     <ClInclude Include="Complex.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="Liste.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -66,6 +69,9 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="Complex.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Liste.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

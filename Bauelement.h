@@ -18,6 +18,9 @@ public:
 
 
 	std::string getName(void) const;
+	///<summary>
+	//Gibt den Preis des Bauelements zurück
+	///</summary>
 	double getPreis(void) const;
 	CPunkt getPosition(void) const;
 	CBauelement* getNext(void) const;
@@ -26,6 +29,10 @@ public:
 	void setPreis(double _preis);
 	void setPosition(CPunkt _position);
 	void setNext(CBauelement* _next);
+	///<summary>
+	// Adds a new Bauelement at end of Container
+	///</summary>
+	void addEntryAtEnd(CBauelement& _Bauelement);
 };
 
 std::ostream& operator<<(std::ostream& stream, CBauelement _bauelement);

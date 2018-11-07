@@ -8,7 +8,7 @@ CBauelement::CBauelement()
 }
 
 CBauelement::CBauelement(std::string _name, double _preis, CPunkt _position, CBauelement* _next)
-	: name(_name), preis(_preis), position(_position),next(_next)
+	: name(_name), preis(_preis), position(_position), next(_next)
 {}
 
 CBauelement::~CBauelement()
@@ -32,7 +32,14 @@ CPunkt CBauelement::getPosition() const
 
 CBauelement* CBauelement::getNext(void) const
 {
-	return next;
+	if (next != nullptr)
+	{
+		return next;
+	}
+	else
+	{
+		return nullptr;
+	}
 }
 
 void CBauelement::setName(std::string _name)
@@ -53,6 +60,7 @@ void CBauelement::setNext(CBauelement* _next)
 {
 	next = _next;
 }
+
 
 std::ostream& operator<<(std::ostream& stream, CBauelement _bauelement)
 {
