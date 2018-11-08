@@ -12,7 +12,7 @@ protected:
 
 public:
 	CBauelement();
-	CBauelement(std::string _name, double _preis, CPunkt _position, CBauelement* _next = NULL);
+	CBauelement(std::string _name, double _preis, CPunkt _position);
 	~CBauelement();
 
 

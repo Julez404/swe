@@ -2,21 +2,21 @@
 #include "bauelement.h"
 
 CBauelement::CBauelement()
-	:preis(0)
+	: preis(0)
 	, position(CPunkt())
 	, next(NULL)
 {}
 
-CBauelement::CBauelement(std::string _name, double _preis, CPunkt _position, CBauelement* _next)
-	: name(_name), preis(_preis), position(_position), next(_next)
+CBauelement::CBauelement(std::string _name, double _preis, CPunkt _position)
+	: name(_name)
+	, preis(_preis)
+	, position(_position)
+	, next(NULL)
 {}
 
 CBauelement::~CBauelement()
 {
-	if (next != NULL)
-	{
-		delete next;
-	}
+	std::cout << "Delete (Bauelement): " << this->getName() << std::endl;
 }
 
 std::string CBauelement::getName(void) const
