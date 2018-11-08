@@ -47,24 +47,6 @@ bool CListe::addToStart(CBauelement* _newStartPtr)
 	}
 }
 
-void CListe::print(void)
-{
-	CBauelement* ptr = start;
-
-	std::cout << *ptr << std::endl; //Löscht next
-	ptr = start->getNext();
-	std::cout << *ptr << std::endl;
-
-
-	/*
-		for (ptr = start; ptr != NULL ; ptr = ptr->getNext()->getNext())
-		{
-			std::cout << *ptr << std::endl;
-		}
-		*/
-}
-
-
 void CListe::printAllElements(void) const
 {
 	CBauelement* ptr = NULL;
@@ -74,3 +56,19 @@ void CListe::printAllElements(void) const
 		std::cout << *ptr << std::endl;
 	}
 }
+
+CBauelement* CListe::searchName(std::string _nameToFind) const
+{
+	CBauelement* nameSearchPtr = start;
+	while (nameSearchPtr != NULL)
+	{
+		if (nameSearchPtr->getName() == _nameToFind)
+		{
+			return nameSearchPtr;
+		}
+		nameSearchPtr = nameSearchPtr->getNext();
+	}
+	return NULL;
+}
+
+
