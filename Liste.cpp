@@ -1,87 +1,76 @@
 #include "stdafx.h"
-#include "Bauelement.h"
-#include "Liste.h"
+#include "liste.h"
 
-template<class T>
-CListe<T>::CListe(T* _t)
+CListe::CListe()
+	:start(NULL)
+{}
+
+CListe::CListe(CBauelement* _bauelement)
 {
-	start = _t;
+	start = _bauelement;
 }
 
-
-template <class T>
-CListe<T>::~CListe()
+CListe::~CListe()
 {
 	if (start != NULL)
 	{
-		delete start; // Cascaded Delete missing
+		delete start;
 	}
 }
 
 
-template <class T>
-T* CListe<T>::getLastEntry(void)
+CBauelement* CListe::getStart(void) const
 {
-	T LastEntryPtr* = start;
-	if ((*start).getNext() == NULL)
-	{
-		LastEntryPtr = start
-	}
-	else
-	{
-		while ((*LastEntryPtr).getNext() != NULL)
-		{
-			LastEntryPtr = (*LastEntryPtr).getNext();
-		}
-	}
-	return LastEntryPtr;
+	return start;
 }
 
-
-template <class T>
-T* CListe<T>::getFirstEntry(void)
+///<summary>
+//Returns 0 on success
+///</summary>
+bool CListe::setStart(CBauelement* _newStartPtr)
 {
-	return T;
-}
-
-
-template <class T>
-int CListe<T>::addStart(T* _newEntryPtr)
-{
-
 	return 0;
 }
 
 
-template <class T>
-int CListe<T>::addEnd(T* _newEntryPtr)
+bool CListe::addToStart(CBauelement* _newStartPtr)
 {
-	if (_newEntryPtr == NULL)
+	if (_newStartPtr == NULL)
 	{
 		return 1;
 	}
 	else
 	{
-		if ((*start).getNext() == NULL)
-		{
-			(*start).setNext(_newEntryPtr);
-		}
-		else
-		{
-			T* newEntryTempPtr = (*start).getNext();
-			while ((*newEntryTempPtr).getNext() != NULL)
-			{
-				newEntryTempPtr = (*newEntryTempPtr).getNext();
-			}
-			(*newEntryTempPtr).setNext(_newEntryPtr);
-		}
+		(*_newStartPtr).setNext(start);
+		start = _newStartPtr;
+		return 0;
 	}
-	return 0;
+}
+
+void CListe::print(void)
+{
+	CBauelement* ptr = start;
+
+	std::cout << *ptr << std::endl; //Löscht next
+	ptr = start->getNext();
+	std::cout << *ptr << std::endl;
+
+
+	/*
+		for (ptr = start; ptr != NULL ; ptr = ptr->getNext()->getNext())
+		{
+			std::cout << *ptr << std::endl;
+		}
+		*/
 }
 
 
-template <class T>
-void CListe<T>::printAllEntrys(void)
+void CListe::printAllElements(void) const
 {
+	CBauelement* ptr = NULL;
 
+	for (ptr = start; ptr != NULL; ptr = ptr->getNext())
+	{
+		std::cout << *ptr << std::endl;
+	}
 }

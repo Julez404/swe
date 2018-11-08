@@ -1,30 +1,24 @@
 #pragma once
+#include "Bauelement.h"
 
-template <class T>
 class CListe
 {
-
-private:
-	T* start;
-
+protected:
+	CBauelement* start;
 
 public:
-	CListe(T* _t);
+	CListe();
+	CListe(CBauelement* _bauelement);
 	~CListe();
-
-	
-	T* getLastEntry(void);
-	T* getFirstEntry(void);
+	CBauelement* CListe::getStart(void) const;
 
 	///<summary>
-	//Returns 0 on Success
+	//Returns 0 on success
 	///</summary>
-	int addStart(T* _newEntryPtr);
-	///<summary>
-	//Returns 0 on Success
-	///</summary>
-	int addEnd(T* _newEntryPtr);
+	bool setStart(CBauelement* _newStartPtr);
 
-	void printAllEntrys(void);
-	
+	bool addToStart(CBauelement* _newStartPtr);
+
+	void printAllElements(void) const;
+	void print(void);
 };

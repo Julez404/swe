@@ -148,6 +148,7 @@
     <ClInclude Include="Bauelement.h" />
     <ClInclude Include="Complex.h" />
     <ClInclude Include="Kap.h" />
+    <ClInclude Include="ListeTemp.h" />
     <ClInclude Include="Liste.h" />
     <ClInclude Include="Punkt.h" />
     <ClInclude Include="Spule.h" />
@@ -159,6 +160,7 @@
     <ClCompile Include="Bauelement.cpp" />
     <ClCompile Include="Complex.cpp" />
     <ClCompile Include="Kap.cpp" />
+    <ClCompile Include="ListeTemp.cpp" />
     <ClCompile Include="Liste.cpp" />
     <ClCompile Include="Punkt.cpp" />
     <ClCompile Include="Spule.cpp" />

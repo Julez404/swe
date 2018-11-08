@@ -49,8 +49,8 @@ void CPunkt::setNext(CPunkt* _next)
 	next = _next;
 }
 
-std::ostream& operator<<(std::ostream& stream, CPunkt _punkt)
+std::ostream& operator<<(std::ostream& stream, const CPunkt& _punkt)
 {
-	stream << "(" << _punkt.getX() << "|" << _punkt.getY() << ")";
+	stream << "(" << _punkt.x << "|" << _punkt.y << ")";
 	return stream;
 }

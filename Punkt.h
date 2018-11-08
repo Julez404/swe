@@ -22,8 +22,9 @@ public:
 	void setY(double _y);
 	void setXY(double _x, double _y);
 	void setNext(CPunkt* _next);
+
+	friend std::ostream& operator<<(std::ostream& stream, const CPunkt& _punkt);
 };
 
-std::ostream& operator<<(std::ostream& stream, CPunkt _punkt);
 
 #endif // !_CPUNKT
