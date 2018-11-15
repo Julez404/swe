@@ -17,35 +17,37 @@ public:
 	bool addToStart(CBauelement* _newStartPtr);
 	bool addToEnd(CBauelement* _newStartPtr);
 	bool delAtStart(void);
-	bool delAtEnd(void);
 
 	int  getEntryCount(void)const;
 	void printAllElements(void) const;
 
 	CBauelement* searchName(const std::string& _nameToFind) const;
-	template<class T, class K>
-	CListe* search(T _searchObj, T (*fktPtr)(K&)) const;
 
+	/*
+	template<class T, class K>
+	CListe search(T _searchObj, T (*fktPtr)(K&)) const;
+	*/
 	friend std::ostream& operator<<(std::ostream& stream, const CListe& _list);
 };
 
 
+/*
 //Will move to .cpp with polymorphie
 template<class T, class K>
-CListe* CListe::search(T _searchObj, T(*fktPtr)(K&)) const
+CBauelement** CListe::search(T _searchObj, T(*fktPtr)(K&)) const
 {
-	static CListe* listOfItemsToReturn = new CListe;
+	CListe listOfItemsToReturn;
 	CBauelement* searchPtr = start;
 	while (searchPtr != NULL)
 	{
 		if ((*fktPtr)(*searchPtr) == _searchObj)
 		{
-			CBauelement* newEntry = new CBauelement(*searchPtr);
-			listOfItemsToReturn->addToStart(newEntry);
+			listOfItemsToReturn.addToStart(new CBauelement(*searchPtr));
 		}
 		searchPtr = searchPtr->getNext();
 	}
 	return listOfItemsToReturn;
 }
+*/
 
 

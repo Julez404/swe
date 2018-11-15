@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Punkt.h"
+#include "Complex.h"
 
 class CBauelement
 {
@@ -15,15 +16,11 @@ public:
 	CBauelement(std::string _name, double _preis, CPunkt _position);
 	~CBauelement();
 
-
-
 	std::string getName(void) const;
-	///<summary>
-	//Returns price of element
-	///</summary>
 	double getPreis(void) const;
 	CPunkt getPosition(void) const;
 	CBauelement* getNext(void) const;
+	virtual CComplex getImpedanz(double _f) const =0;
 
 	void setName(std::string _name);
 	void setPreis(double _preis);

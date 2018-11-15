@@ -12,6 +12,8 @@ CListe::CListe(CBauelement* _bauelement)
 
 CListe::~CListe()
 {
+	std::cout << "Lösche liste" << std::endl;
+
 	CBauelement* ptr = start;
 	int Entrys = this->getEntryCount();
 	CBauelement** delList = new CBauelement*[Entrys];
@@ -79,39 +81,18 @@ bool CListe::addToEnd(CBauelement * _newStartPtr)
 
 bool CListe::delAtStart()
 {
-	return 0;
-}
-
-bool CListe::delAtEnd()
-{
-	//Check if Entry exist
-	if (start == NULL)
+	CBauelement* delPtr = start;
+	if (start->getNext() != NULL) 
+	{
+		
+	}
+	else
 	{
 		return 1;
 	}
-	CBauelement* nullCopyPtr = NULL;
-	CBauelement* delPtr = NULL;
-	CBauelement* ptr = start;
-
-	/* Need Implementation of Delete Funcionaliti
-	while (ptr != NULL)
-	{
-		ptr = ptr->getNext();
-		)
-		delPtr = ptr;
-		
-	}
-	if (nullCopyPtr != NULL)
-	{
-		nullCopyPtr->setNext(NULL);
-	}
-	if (delPtr != NULL)
-		delete	delPtr;
-	delete delPtr;
-	return 0;
-	*/
-		return 0;
 }
+
+
 
 int CListe::getEntryCount(void)const
 {
