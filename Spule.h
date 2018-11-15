@@ -14,10 +14,9 @@ public:
 
 	double getL() const;
 	CComplex getImpedanz(double _f) const;
+	void print(void) const;
 
 	void setL(double _l);
 
-
+	friend std::ostream& operator<<(std::ostream& stream, CSpule toPrint);
 };
-
-std::ostream& operator<<(std::ostream& stream, CSpule toPrint);

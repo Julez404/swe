@@ -1,12 +1,11 @@
 #pragma once
+
 #include "Bauelement.h"
 #include "Complex.h"
 
 class CWiderstand :
 	public CBauelement
 {
-public:
-
 protected:
 	double r;
 public:
@@ -15,10 +14,11 @@ public:
 	~CWiderstand();
 
 	double getR() const;
+	CComplex getImpedanz(double _f) const;
+	void print(void) const;
+
 	void setR(double _r);
 
-	CComplex getImpedanz(double _f) const;
-
+	friend 	std::ostream& operator<<(std::ostream& stream, CWiderstand _CWiderstand);
 };
 
-std::ostream& operator<<(std::ostream& stream, CWiderstand _CWiderstand);

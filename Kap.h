@@ -16,6 +16,7 @@ public:
 
 	double getC() const;
 	CComplex getImpedanz(double _f)const;
+	void print(void) const;
 
 	void setC(double _c);
 	};

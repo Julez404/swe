@@ -25,6 +25,10 @@ CComplex CKap::getImpedanz(double _f) const
 	return CComplex(0, -(1 / (2 * M_PI*_f*c)));
 }
 
+void CKap::print(void) const
+{
+	std::cout << "Bez.: " << name << " Preis: " << preis << " EUR  Position: " << position << "C: " << c << "F" << std::endl;
+}
 
 void CKap::setC(double _c)
 {
@@ -33,7 +37,7 @@ void CKap::setC(double _c)
 
 std::ostream& operator<<(std::ostream& stream, CKap toPrint)
 {
-	stream << toPrint.getName() << "," << toPrint.getC() << "Ohm" << toPrint.getPreis(), toPrint.getPosition();
+	stream << toPrint.getName() << ", " << toPrint.getC() << "F, " << toPrint.getPreis() << "EUR, " << toPrint.getPosition();
 	return stream;
 }
 
