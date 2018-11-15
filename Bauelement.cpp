@@ -16,14 +16,13 @@ CBauelement::CBauelement(std::string _name, double _preis, CPunkt _position)
 
 CBauelement::~CBauelement()
 {
-	std::cout << "Delete (Bauelement): " << this->getName() << std::endl;
+	std::cout << "~Bauelement (" << this->getName() << ")" << std::endl;
 }
 
 std::string CBauelement::getName(void) const
 {
 	return name;
 }
-
 
 double CBauelement::getPreis() const
 {
@@ -58,7 +57,6 @@ void CBauelement::setNext(CBauelement* _next)
 {
 	next = _next;
 }
-
 
 std::ostream& operator<<(std::ostream& stream, const CBauelement& _bauelement)
 {
