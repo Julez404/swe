@@ -16,22 +16,27 @@ void CComplex::setReal(const double&_real)
 {
 	real = _real;
 }
+
 void CComplex::setImag(const double& _imag)
 {
 	imag = _imag;
 }
+
 double CComplex::getReal(void) const
 {
 	return real;
 }
+
 double CComplex::getImag(void) const
 {
 	return imag;
 }
+
 double CComplex::getBetrag(void) const 
 {
 	return sqrt( (imag*imag) + (real*real));
 }
+
 double CComplex::getWinkel(void) const 
 {
 	return (180/M_PI) * atan(imag/real);
@@ -60,6 +65,7 @@ CComplex CComplex::operator-(const CComplex& _complex) const
 	res.imag = this->imag - _complex.imag;
 	return res;
 }
+
 CComplex CComplex::operator/(CComplex _complex) const
 {
 	CComplex res;
@@ -69,6 +75,7 @@ CComplex CComplex::operator/(CComplex _complex) const
 	res.imag = res.imag / ((_complex.real*_complex.real) + (_complex.imag*_complex.imag));
 	return res;
 }
+
 CComplex CComplex::operator*(const CComplex& _complex) const
 {
 	CComplex res;
@@ -76,7 +83,6 @@ CComplex CComplex::operator*(const CComplex& _complex) const
 	res.imag = (this->real*_complex.imag) + (this->imag*_complex.real);
 	return res;
 }
-
 
 std::ostream& operator<<(std::ostream& stream, const CComplex& _complex)
 {
