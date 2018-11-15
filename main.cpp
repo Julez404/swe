@@ -8,20 +8,22 @@
 #include "Kap.h"
 #include "Spule.h"
 #include "Liste.h"
-//#include "Liste.cpp"
 
 std::string getName(const CBauelement& _bauelement);
-
 std::string getName(const CBauelement& _bauelement)
 {
 	return _bauelement.getName();
 }
 
-
 int main()
 {
-	CWiderstand r1("R1", 5.90, CPunkt(1, 2), 1000);
+	double frequency = 50;
 
+	CSpule r1("MSW",2.5,CPunkt(5,2),5);
+
+	CComplex ImpedanzToPrint;
+	CBauelement* ElementToPrint;
+	std::string NameToFind = "L2";
 	CListe* BauelementListe = new CListe;
 
 	BauelementListe->addToEnd(new CWiderstand("R1", 1.5, CPunkt(3, 15), 1.5));
@@ -31,15 +33,19 @@ int main()
 	BauelementListe->addToEnd(new CWiderstand("R3", 5.3, CPunkt(12, 23), 14.1));
 	BauelementListe->addToEnd(new CSpule("L2", 5.3, CPunkt(17, 4), 0.150));
 
+	std::cout << "Serial Impedanz for " << frequency << "Hz: " << BauelementListe->getSerialImpedanz(frequency) << std::endl;
 
-	std::cout << "Widerstandwerte: " << std::endl;
-	
+	ElementToPrint = BauelementListe->searchName(NameToFind);
+	if (ElementToPrint != NULL) 
+	{
+		std::cout << "Impedanz for Element " << NameToFind;
+		std::cout << " at " << frequency << "Hz :";
+		std::cout << ElementToPrint->getImpedanz(frequency) << std::endl;
+	}
+	delete BauelementListe;
 
+	std::cout << r1 << std::endl;
 
-
-
-
-	
 
 	//----------------
 	std::cout << std::endl;
