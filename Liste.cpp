@@ -12,8 +12,22 @@ CListe::CListe(CBauelement* _bauelement)
 
 CListe::~CListe()
 {
-	std::cout << "Lösche liste" << std::endl;
+	std::cout << "~CListe" << std::endl;
 
+	CBauelement* delPtr =start;
+
+	while (start != NULL) 
+	{
+		start = start->getNext();
+		delete delPtr;
+		delPtr = start;
+	}
+
+
+
+
+
+	/*
 	CBauelement* ptr = start;
 	int Entrys = this->getEntryCount();
 	CBauelement** delList = new CBauelement*[Entrys];
@@ -28,11 +42,61 @@ CListe::~CListe()
 		delete	delList[i];
 	}
 	delete[] delList;
+	*/
 }
 
 CBauelement* CListe::getStart(void) const
 {
 	return start;
+}
+
+int CListe::getEntryCount(void)const
+{
+	CBauelement* ptr = start;
+	int count = 0;
+	while (ptr != NULL)
+	{
+		count++;
+		ptr = ptr->getNext();
+	}
+	return count;
+}
+
+void CListe::printAllElements(void) const
+{
+	CBauelement* ptr = NULL;
+
+	for (ptr = start; ptr != NULL; ptr = ptr->getNext())
+	{
+		std::cout << *ptr << std::endl;
+	}
+}
+
+CBauelement* CListe::searchName(const std::string& _nameToFind) const
+{
+	CBauelement* nameSearchPtr = start;
+	while (nameSearchPtr != NULL)
+	{
+		if (nameSearchPtr->getName() == _nameToFind)
+		{
+			return nameSearchPtr;
+		}
+		nameSearchPtr = nameSearchPtr->getNext();
+	}
+	return NULL;
+}
+
+CComplex CListe::getSerialImpedanz(double _f) const
+{
+	CBauelement* lookupPtr = start;
+	CComplex serialImpedanz;
+
+	while (lookupPtr != NULL)
+	{
+		serialImpedanz = serialImpedanz + lookupPtr->getImpedanz(_f);
+		lookupPtr = lookupPtr->getNext();
+	}
+	return serialImpedanz;
 }
 
 bool CListe::setStart(CBauelement* _newStartPtr)
@@ -74,60 +138,30 @@ bool CListe::addToEnd(CBauelement * _newStartPtr)
 				lookupPtr = lookupPtr->getNext();
 			}
 			lookupPtrOld->setNext(_newStartPtr);
-			return 0;
 		}
+		return 0;
 	}
 }
 
 bool CListe::delAtStart()
-{
+{	
 	CBauelement* delPtr = start;
-	if (start->getNext() != NULL) 
+
+	if (start != NULL)
 	{
-		
-	}
-	else
-	{
-		return 1;
-	}
-}
-
-
-
-int CListe::getEntryCount(void)const
-{
-	CBauelement* ptr = start;
-	int count = 0;
-	while (ptr != NULL)
-	{
-		count++;
-		ptr = ptr->getNext();
-	}
-	return count;
-}
-
-void CListe::printAllElements(void) const
-{
-	CBauelement* ptr = NULL;
-
-	for (ptr = start; ptr != NULL; ptr = ptr->getNext())
-	{
-		std::cout << *ptr << std::endl;
-	}
-}
-
-CBauelement* CListe::searchName(const std::string& _nameToFind) const
-{
-	CBauelement* nameSearchPtr = start;
-	while (nameSearchPtr != NULL)
-	{
-		if (nameSearchPtr->getName() == _nameToFind)
+		if (start->getNext() == NULL)
 		{
-			return nameSearchPtr;
+			delete start;
+			return 0;
 		}
-		nameSearchPtr = nameSearchPtr->getNext();
+		else
+		{
+			start = start->getNext();
+			delete delPtr;
+			return 0;
+		}
 	}
-	return NULL;
+	return 1;
 }
 
 std::ostream& operator<<(std::ostream& stream, const CListe& _list)

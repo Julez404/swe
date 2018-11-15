@@ -13,15 +13,20 @@ public:
 	~CListe();
 	
 	CBauelement* CListe::getStart(void) const;
+	int  getEntryCount(void)const;
+	void printAllElements(void) const;
+	CBauelement* searchName(const std::string& _nameToFind) const;
+	CComplex getSerialImpedanz(double _f) const;
+
 	bool setStart(CBauelement* _newStartPtr);
 	bool addToStart(CBauelement* _newStartPtr);
 	bool addToEnd(CBauelement* _newStartPtr);
 	bool delAtStart(void);
 
-	int  getEntryCount(void)const;
-	void printAllElements(void) const;
 
-	CBauelement* searchName(const std::string& _nameToFind) const;
+
+
+
 
 	/*
 	template<class T, class K>
