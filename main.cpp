@@ -26,12 +26,12 @@ int main()
 	std::string NameToFind = "L2";
 	CListe* BauelementListe = new CListe;
 
-	BauelementListe->addToEnd(new CWiderstand("R1", 1.5, CPunkt(3, 15), 1.5));
-	BauelementListe->addToEnd(new CSpule("L1", 5.3, CPunkt(7, 1), 0.05));
-	BauelementListe->addToEnd(new CKap("C1", 5.3, CPunkt(2, 5), 0.0003));
-	BauelementListe->addToEnd(new CWiderstand("R2", 5.3, CPunkt(8, 11), 13.1));
-	BauelementListe->addToEnd(new CWiderstand("R3", 5.3, CPunkt(12, 23), 14.1));
-	BauelementListe->addToEnd(new CSpule("L2", 5.3, CPunkt(17, 4), 0.150));
+	BauelementListe->addToEnd(new CWiderstand("R1", 0.35, CPunkt(3, 15), 1.5));
+	BauelementListe->addToEnd(new CSpule("L1", 0.81, CPunkt(7, 1), 0.05));
+	BauelementListe->addToEnd(new CKap("C1", 0.15, CPunkt(2, 5), 0.0003));
+	BauelementListe->addToEnd(new CWiderstand("R2", 0.25, CPunkt(8, 11), 13.1));
+	BauelementListe->addToEnd(new CWiderstand("R3", 0.56, CPunkt(12, 23), 14.1));
+	BauelementListe->addToEnd(new CSpule("L2", 3.1, CPunkt(17, 4), 0.150));
 
 	BauelementListe->printAllElements();
 	std::cout << std::endl;
