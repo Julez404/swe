@@ -25,7 +25,7 @@ CComplex CSpule::getImpedanz(double _f) const
 
 void CSpule::print(void) const 
 {
-	std::cout << "Bez.: " << name << " Preis: " << preis << " EUR  Position: " << position << "L: " << l << "H" << std::endl;
+	std::cout << "Bez.: " << name << " Preis: " << preis << " EUR  Position: " << position << " L: " << l << " H" << std::endl;
 }
 
 void CSpule::setL(double _l)

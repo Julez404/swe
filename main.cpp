@@ -33,6 +33,9 @@ int main()
 	BauelementListe->addToEnd(new CWiderstand("R3", 5.3, CPunkt(12, 23), 14.1));
 	BauelementListe->addToEnd(new CSpule("L2", 5.3, CPunkt(17, 4), 0.150));
 
+	BauelementListe->printAllElements();
+	std::cout << std::endl;
+	
 	std::cout << "Serial Impedanz for " << frequency << "Hz: " << BauelementListe->getSerialImpedanz(frequency) << std::endl;
 
 	ElementToPrint = BauelementListe->searchName(NameToFind);

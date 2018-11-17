@@ -68,7 +68,7 @@ void CListe::printAllElements(void) const
 
 	for (ptr = start; ptr != NULL; ptr = ptr->getNext())
 	{
-		std::cout << *ptr << std::endl;
+		ptr->print();
 	}
 }
 
