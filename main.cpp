@@ -17,9 +17,10 @@ std::string getName(const CBauelement& _bauelement)
 
 int main()
 {
+	std::ofstream bowde;
 	double frequency = 50;
 
-	CSpule r1("MSW",2.5,CPunkt(5,2),5);
+	CSpule r1("MSW", 2.5, CPunkt(5, 2), 5);
 
 	CComplex ImpedanzToPrint;
 	CBauelement* ElementToPrint;
@@ -35,11 +36,21 @@ int main()
 
 	BauelementListe->printAllElements();
 	std::cout << std::endl;
-	
+
+	bowde.open("bowde.txt", std::ios::out);
+	if (bowde.is_open())
+	{
+		for (int i = 1; i <= 1000; i++) {
+			bowde << BauelementListe->getSerialImpedanz(i).getBetrag() << ";" << BauelementListe->getSerialImpedanz(i).getWinkel() << std::endl;
+		}
+		bowde.close();
+	}
+
+
 	std::cout << "Serial Impedanz for " << frequency << "Hz: " << BauelementListe->getSerialImpedanz(frequency) << std::endl;
 
 	ElementToPrint = BauelementListe->searchName(NameToFind);
-	if (ElementToPrint != NULL) 
+	if (ElementToPrint != NULL)
 	{
 		std::cout << "Impedanz for Element " << NameToFind;
 		std::cout << " at " << frequency << "Hz :";
