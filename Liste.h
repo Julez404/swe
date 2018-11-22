@@ -1,11 +1,13 @@
 #pragma once
 #include "Bauelement.h"
-
+#include "ImpedanzRechner.h"
 
 class CListe
 {
 protected:
 	CBauelement* start;
+	ImpedanzRechner* ImpPtr;
+
 
 public:
 	CListe();
@@ -17,11 +19,13 @@ public:
 	void printAllElements(void) const;
 	CBauelement* searchName(const std::string& _nameToFind) const;
 	CComplex getSerialImpedanz(double _f) const;
+	CComplex getImpedanzOfList(double _f) const;
 
 	bool setStart(CBauelement* _newStartPtr);
 	bool addToStart(CBauelement* _newStartPtr);
 	bool addToEnd(CBauelement* _newStartPtr);
 	bool delAtStart(void);
+	void setImpPtr(ImpedanzRechner* _ImpPtr);
 
 
 

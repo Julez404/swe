@@ -147,6 +147,8 @@
   <ItemGroup>
     <ClInclude Include="Bauelement.h" />
     <ClInclude Include="Complex.h" />
+    <ClInclude Include="ImpedanzRechner.h" />
+    <ClInclude Include="ImpedanzRechner_Serie.h" />
     <ClInclude Include="Kap.h" />
     <ClInclude Include="ListeTemp.h" />
     <ClInclude Include="Liste.h" />
@@ -159,6 +161,8 @@
   <ItemGroup>
     <ClCompile Include="Bauelement.cpp" />
     <ClCompile Include="Complex.cpp" />
+    <ClCompile Include="ImpedanzRechner.cpp" />
+    <ClCompile Include="ImpedanzRechner_Serie.cpp" />
     <ClCompile Include="Kap.cpp" />
     <ClCompile Include="Liste.cpp" />
     <ClCompile Include="ListeTemp.cpp" />

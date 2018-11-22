@@ -12,8 +12,6 @@ CListe::CListe(CBauelement* _bauelement)
 
 CListe::~CListe()
 {
-	std::cout << "~CListe" << std::endl;
-
 	CBauelement* delPtr =start;
 
 	while (start != NULL) 
@@ -22,27 +20,6 @@ CListe::~CListe()
 		delete delPtr;
 		delPtr = start;
 	}
-
-
-
-
-
-	/*
-	CBauelement* ptr = start;
-	int Entrys = this->getEntryCount();
-	CBauelement** delList = new CBauelement*[Entrys];
-
-	for (int i = 0; i < Entrys; i++)
-	{
-		delList[i] = ptr;
-		ptr = ptr->getNext();
-	}
-	for (int i = 0; i < Entrys; i++)
-	{
-		delete	delList[i];
-	}
-	delete[] delList;
-	*/
 }
 
 CBauelement* CListe::getStart(void) const
@@ -97,6 +74,11 @@ CComplex CListe::getSerialImpedanz(double _f) const
 		lookupPtr = lookupPtr->getNext();
 	}
 	return serialImpedanz;
+}
+
+CComplex CListe::getImpedanzOfList(double _f) const 
+{
+	return ImpPtr->berechneImpedanz(*this,_f);
 }
 
 bool CListe::setStart(CBauelement* _newStartPtr)
@@ -162,6 +144,11 @@ bool CListe::delAtStart()
 		}
 	}
 	return 1;
+}
+
+void CListe::setImpPtr(ImpedanzRechner* _ImpPtr)
+{
+	ImpPtr = _ImpPtr;
 }
 
 std::ostream& operator<<(std::ostream& stream, const CListe& _list)

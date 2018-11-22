@@ -48,6 +48,12 @@
     <ClInclude Include="Liste.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="ImpedanzRechner.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ImpedanzRechner_Serie.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -78,6 +84,12 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="Liste.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ImpedanzRechner.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ImpedanzRechner_Serie.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
