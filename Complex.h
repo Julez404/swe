@@ -19,6 +19,7 @@ public:
 	double getImag(void) const;
 	double getBetrag(void) const;
 	double getWinkel(void) const;
+	CComplex getKehrwert(void) const;
 
 	CComplex add(const CComplex& _complex) const;
 	CComplex operator+(const CComplex& _complex) const;

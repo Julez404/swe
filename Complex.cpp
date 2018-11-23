@@ -42,6 +42,11 @@ double CComplex::getWinkel(void) const
 	return (180/M_PI) * atan(imag/real);
 }
 
+CComplex CComplex::getKehrwert(void) const 
+{
+	return CComplex(1, 0) / *this;
+}
+
 CComplex CComplex::add(const CComplex& _complex) const
 {
 	CComplex res;
