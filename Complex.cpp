@@ -12,7 +12,7 @@ CComplex::CComplex(double _real, double _imag)
 CComplex::~CComplex()
 {}
 
-void CComplex::setReal(const double&_real)
+void CComplex::setReal(const double& _real)
 {
 	real = _real;
 }

@@ -12,7 +12,7 @@ public:
 	CComplex(double _real, double _imag);
 	~CComplex();
 
-	void setReal(const double&_real);
+	void setReal(const double& _real);
 	void setImag(const double& _imag);
 
 	double getReal(void) const;
