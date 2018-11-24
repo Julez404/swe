@@ -14,7 +14,7 @@ protected:
 public:
 	CBauelement();
 	CBauelement(std::string _name, double _preis, CPunkt _position);
-	~CBauelement();
+	virtual ~CBauelement();
 
 	std::string getName(void) const;
 	double getPreis(void) const;
