@@ -1,7 +1,6 @@
 #pragma once
 #include "ImpedanzRechner.h"
-#include "Liste.h"
-#include "Complex.h"
+#include "liste.h"
 
 class ImpedanzRechner_Parallel :
 	public ImpedanzRechner

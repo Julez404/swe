@@ -1,5 +1,7 @@
 #include "stdafx.h"
+
 #include "ImpedanzRechner_Parallel.h"
+
 
 
 ImpedanzRechner_Parallel::ImpedanzRechner_Parallel()

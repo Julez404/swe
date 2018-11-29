@@ -1,8 +1,6 @@
 #include "stdafx.h"
 
 #include "ImpedanzRechner_Serie.h"
-#include "Bauelement.h"
-#include "Complex.h"
 
 
 ImpedanzRechner_Serie::ImpedanzRechner_Serie()
