@@ -29,7 +29,7 @@ double CBauelement::getPreis() const
 	return preis;
 }
 
-CPunkt CBauelement::getPosition() const
+CPunkt const & CBauelement::getPosition() const
 {
 	return position;
 }

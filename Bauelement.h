@@ -18,7 +18,7 @@ public:
 
 	std::string getName(void) const;
 	double getPreis(void) const;
-	CPunkt getPosition(void) const;
+	CPunkt const & getPosition(void) const;
 	CBauelement* getNext(void) const;
 	virtual CComplex getImpedanz(double _f) const =0;
 	virtual void print(void) const= 0;
