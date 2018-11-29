@@ -36,7 +36,7 @@ int main()
 	*/
 	BauelementListe->printAllElements();
 
-	
+	delete BauelementListe;
 
 	//----------------	
 	std::cout << std::endl;
